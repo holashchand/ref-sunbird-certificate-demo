@@ -48,7 +48,7 @@ services:
       - pdf_url=http://certificate-api:8078/api/v1/certificatePDF
       - template_base_url=http://registry:8081/api/v1/templates/ #Looks for certificate templates for pdf copy of the signed certificate
     ports:
-      - "6081:8081"
+      - "6083:8081"
     depends_on:
       es:
         condition: service_healthy
@@ -75,7 +75,7 @@ services:
       timeout: 10s
       retries: 5
     ports:
-      - "6080:8080"
+      - "6082:8080"
       - "6990:9990"
     depends_on:
       db:
@@ -88,7 +88,7 @@ services:
       - connectionInfo_password=postgres
       - sunbirdrc_url=http://registry:8081
     ports:
-      - "6082:8082"
+      - "6084:8082"
     depends_on:
       db:
         condition: service_started
