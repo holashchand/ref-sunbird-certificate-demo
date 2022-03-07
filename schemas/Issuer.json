@@ -20,22 +20,49 @@
       ],
       "properties": {
         "name": {
-          "type": "string"
+          "type": "string",
+          "title": "Issuer/Organisation Name"
+        },
+        "sectorType": {
+          "type": "string",
+          "enum": [
+            "Education"
+          ],
+          "title": "Sector Type"
         },
         "logoUrl": {
-          "type": "string"
+          "type": "string",
+          "title": "Logo url"
         },
         "websiteUrl": {
-          "type": "string"
+          "type": "string",
+          "title": "Website url"
+        },
+        "accountDetails": {
+          "title": "Enter Email id or Phone number that you would use for login",
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "string",
+              "title": "Email Id or Mobile number"
+            }
+          }
         },
         "contactDetails": {
           "type": "object",
+          "title": "Enter administrator details",
           "properties": {
+            "name": {
+              "type": "string",
+              "title": "Contact Name"
+            },
             "mobile": {
-              "type": "string"
+              "type": "string",
+              "title": "Mobile number"
             },
             "email": {
-              "type": "string"
+              "type": "string",
+              "title": "Email ID"
             }
           }
         },
@@ -72,9 +99,9 @@
     "inviteRoles": ["anonymous"],
     "ownershipAttributes": [
       {
-        "email": "/contactDetails/email",
-        "mobile": "/contactDetails/mobile",
-        "userId": "/contactDetails/mobile"
+        "email": "/accountDetails/userId",
+        "mobile": "/accountDetails/userId",
+        "userId": "/accountDetails/userId"
       }
     ]
   }
