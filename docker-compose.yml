@@ -47,6 +47,7 @@ services:
       - signature_enabled=true
       - pdf_url=http://certificate-api:8078/api/v1/certificatePDF
       - template_base_url=http://registry:8081/api/v1/templates/ #Looks for certificate templates for pdf copy of the signed certificate
+      - sunbird_keycloak_user_set_password=true
     ports:
       - "6083:8081"
     depends_on:
