@@ -39,32 +39,10 @@
           "title": "Website url"
         },
         "accountDetails": {
-          "title": "Enter Email id or Phone number that you would use for login",
-          "type": "object",
-          "properties": {
-            "userId": {
-              "type": "string",
-              "title": "Email Id or Mobile number"
-            }
-          }
+          "$ref": "#/definitions/AccountDetails"
         },
         "contactDetails": {
-          "type": "object",
-          "title": "Enter administrator details",
-          "properties": {
-            "name": {
-              "type": "string",
-              "title": "Contact Name"
-            },
-            "mobile": {
-              "type": "string",
-              "title": "Mobile number"
-            },
-            "email": {
-              "type": "string",
-              "title": "Email ID"
-            }
-          }
+          "$ref": "#/definitions/ContactDetails"
         },
         "schemas": {
           "type": "array",
@@ -79,6 +57,34 @@
               }
             }
           }
+        }
+      }
+    },
+    "ContactDetails": {
+      "type": "object",
+      "title": "Enter administrator details",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Contact Name"
+        },
+        "mobile": {
+          "type": "string",
+          "title": "Mobile number"
+        },
+        "email": {
+          "type": "string",
+          "title": "Email ID"
+        }
+      }
+    },
+    "AccountDetails": {
+      "title": "Enter Email id or Phone number that you would use for login",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "title": "Email Id or Mobile number"
         }
       }
     }
