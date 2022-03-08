@@ -62,7 +62,8 @@
     },
     "ContactDetails": {
       "type": "object",
-      "title": "Enter administrator details",
+      "description": "Enter administrator details",
+      "title": "Contact Details",
       "properties": {
         "name": {
           "type": "string",
@@ -79,7 +80,8 @@
       }
     },
     "AccountDetails": {
-      "title": "Enter Email id or Phone number that you would use for login",
+      "description": "Enter Email id or Phone number that you would use for login",
+      "title": "Account Details",
       "type": "object",
       "properties": {
         "userId": {
