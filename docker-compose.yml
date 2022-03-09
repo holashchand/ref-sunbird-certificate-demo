@@ -52,6 +52,7 @@ services:
       - filestorage_access_key=admin
       - filestorage_secret_key=12345678
       - filestorage_bucket_key=issuance
+      - registry_base_apis_enable=true
     ports:
       - "6083:8081"
     depends_on:
