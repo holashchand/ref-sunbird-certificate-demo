@@ -48,10 +48,10 @@ services:
       - pdf_url=http://certificate-api:8078/api/v1/certificatePDF
       - template_base_url=http://registry:8081/api/v1/templates/ #Looks for certificate templates for pdf copy of the signed certificate
       - sunbird_keycloak_user_set_password=true
-      - filestorage_connection_url: http://file-storage:9000
-      - filestorage_access_key: admin
-      - filestorage_secret_key: 12345678
-      - filestorage_bucket_key: issuance
+      - filestorage_connection_url=http://file-storage:9000
+      - filestorage_access_key=admin
+      - filestorage_secret_key=12345678
+      - filestorage_bucket_key=issuance
     ports:
       - "6083:8081"
     depends_on:
