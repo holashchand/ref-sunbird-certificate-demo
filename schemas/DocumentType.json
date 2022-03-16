@@ -33,7 +33,7 @@
               "certificateUrl": {
                 "type": "string"
               },
-              "templateUrl": {
+              "thumbnailUrl": {
                 "type": "string"
               }
             }
