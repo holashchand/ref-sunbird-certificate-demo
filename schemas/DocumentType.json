@@ -32,6 +32,9 @@
               },
               "certificateUrl": {
                 "type": "string"
+              },
+              "templateUrl": {
+                "type": "string"
               }
             }
           }
