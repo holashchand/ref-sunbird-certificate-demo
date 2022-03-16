@@ -20,6 +20,8 @@ services:
       retries: 4
   db:
     image: postgres
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
     ports:
       - "6432:5432"
     environment:
