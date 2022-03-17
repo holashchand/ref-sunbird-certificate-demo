@@ -78,6 +78,7 @@ services:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
       - KEYCLOAK_IMPORT=/opt/jboss/keycloak/imports/realm-export.json
+      - PROXY_ADDRESS_FORWARDING=true
     healthcheck:
       test:
         ["CMD-SHELL", "curl -f http://localhost:9990/ || exit 1"]
