@@ -66,10 +66,13 @@ services:
       db:
         condition: service_started
   keycloak:
-    image: dockerhub/ndear-keycloak
+    image: dockerhub/ndear-keycloak:pre-v0.0.8-1
     volumes:
       - ${PWD}/imports:/opt/jboss/keycloak/imports
     environment:
+      - KEYCLOAK_LOGO=https://svgshare.com/i/hDV.svg
+      - KEYCLOAK_PORTAL_TITLE=Issuance
+      - KEYCLOAK_PORTAL_SUB_TITLE="Issue documents that are digitally verifiable"
       - DB_VENDOR=postgres
       - DB_ADDR=db
       - DB_PORT=5432
