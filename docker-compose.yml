@@ -29,7 +29,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   registry:
-    image: dockerhub/sunbird-rc-core:v0.0.5
+    image: dockerhub/sunbird-rc-core:pre-v0.0.8-7
     volumes:
       - ${PWD}/schemas:/home/sunbirdrc/config/public/_schemas
 
@@ -40,12 +40,13 @@ services:
       - elastic_search_connection_url=es:9200
       - search_provider=dev.sunbirdrc.registry.service.ElasticSearchService
       - sunbird_sso_realm=sunbird-rc
-      - sunbird_sso_url=http://keycloak:8080/auth
+      - sunbird_sso_url=https://sunbird-certificate-demo.xiv.in/auth
       - sunbird_sso_admin_client_id=admin-api
       - sunbird_sso_client_id=registry-frontend
       - sunbird_sso_admin_client_secret=0358fa30-6014-4192-9551-7c61b15b774c
       - claims_url=http://claim-ms:8082
       - sign_url=http://certificate-signer:8079/sign
+      - verify_url=http://certificate-signer:8079/verify
       - signature_enabled=true
       - pdf_url=http://certificate-api:8078/api/v1/certificatePDF
       - template_base_url=http://registry:8081/api/v1/templates/ #Looks for certificate templates for pdf copy of the signed certificate
@@ -54,10 +55,11 @@ services:
       - filestorage_access_key=admin
       - filestorage_secret_key=12345678
       - filestorage_bucket_key=issuance
-      - registry_base_apis_enable=true
+      - registry_base_apis_enable=false
       - sunbird_keycloak_user_password=abcd@123
       - logging.level.root=DEBUG
       - enable_external_templates=true
+      - authentication_enabled=true
     ports:
       - "6083:8081"
     depends_on:
@@ -66,13 +68,13 @@ services:
       db:
         condition: service_started
   keycloak:
-    image: dockerhub/ndear-keycloak:pre-v0.0.8-1
+    image: dockerhub/ndear-keycloak:pre-v0.0.8-3
     volumes:
       - ${PWD}/imports:/opt/jboss/keycloak/imports
     environment:
-      - KEYCLOAK_LOGO=https://svgshare.com/i/hDV.svg
+      - KEYCLOAK_LOGO=https://svgshare.com/i/i5N.svg
       - KEYCLOAK_PORTAL_TITLE=Issuance
-      - KEYCLOAK_PORTAL_SUB_TITLE="Issue documents that are digitally verifiable"
+      - KEYCLOAK_PORTAL_SUB_TITLE=Issue documents that are digitally verifiable
       - DB_VENDOR=postgres
       - DB_ADDR=db
       - DB_PORT=5432
@@ -91,7 +93,6 @@ services:
       retries: 5
     ports:
       - "6082:8080"
-      - "8080:8080"
       - "6990:9990"
     depends_on:
       db:
@@ -111,7 +112,7 @@ services:
       registry:
         condition: service_started
   certificate-signer:
-    image: dockerhub/sunbird-rc-certificate-signer:v0.0.5
+    image: dockerhub/sunbird-rc-certificate-signer:pre-v0.0.8-2
     environment:
       - PORT=8079
     ports:
