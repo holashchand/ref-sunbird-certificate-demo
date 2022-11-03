@@ -72,7 +72,7 @@ services:
     volumes:
       - ${PWD}/imports:/opt/jboss/keycloak/imports
     environment:
-      - KEYCLOAK_LOGO=https://svgshare.com/i/i5N.svg
+      - KEYCLOAK_LOGO=https://raw.githubusercontent.com/tejash-jl/ref-sunbird-certificate-demo/async_mode/assets/issuance_portal.svg
       - KEYCLOAK_PORTAL_TITLE=Issuance
       - KEYCLOAK_PORTAL_SUB_TITLE=Issue documents that are digitally verifiable
       - SIGN_UP_LINK=/form/signup
