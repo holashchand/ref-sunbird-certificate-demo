@@ -57,7 +57,7 @@ services:
       - filestorage_bucket_key=issuance
       - registry_base_apis_enable=false
       - sunbird_keycloak_user_password=abcd@123
-      - logging.level.root=DEBUG
+        # - logging.level.root=DEBUG
       - enable_external_templates=true
       - authentication_enabled=true
     ports:
@@ -75,6 +75,7 @@ services:
       - KEYCLOAK_LOGO=https://svgshare.com/i/i5N.svg
       - KEYCLOAK_PORTAL_TITLE=Issuance
       - KEYCLOAK_PORTAL_SUB_TITLE=Issue documents that are digitally verifiable
+      - SIGN_UP_LINK=/form/signup
       - DB_VENDOR=postgres
       - DB_ADDR=db
       - DB_PORT=5432
