@@ -32,11 +32,13 @@
         },
         "logoUrl": {
           "type": "string",
-          "title": "Logo url"
+          "title": "Logo url",
+          "pattern": "^(https?|ftp)://[^\\s/$.?#].[^\\s]*$"
         },
         "websiteUrl": {
           "type": "string",
-          "title": "Website url"
+          "title": "Website url",
+          "pattern": "^(https?|ftp)://[^\\s/$.?#].[^\\s]*$"
         },
         "accountDetails": {
           "$ref": "#/definitions/AccountDetails"
