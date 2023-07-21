@@ -631,7 +631,8 @@
       ],
       "clientRoles": {
         "realm-management": [
-          "manage-users"
+          "manage-users",
+          "manage-realm"
         ],
         "admin-api": [
           "api"
@@ -1320,6 +1321,7 @@
         "http://localhost:4200/*",
         "http://localhost:4202/*",
         "https://localhost:4200/*",
+        "http://localhost:6083/*",
         "http://ndear.xiv.in/*",
         "https://sunbird-certificate-demo.xiv.in/*"
       ],
@@ -1330,6 +1332,7 @@
         "https://ndear.xiv.in",
         "http://localhost:4200",
         "http://ndear.xiv.in",
+        "http://localhost:6083",
         "https://sunbird-certificate-demo.xiv.in",
         "http://20.198.64.128"
       ],
